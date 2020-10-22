@@ -1,2 +1,2 @@
-# kostky
- 
+# Odkaz
+https://drradek.pythonanywhere.com/
