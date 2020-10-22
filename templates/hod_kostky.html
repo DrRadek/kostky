@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/static/custom.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kostky</title>
+</head>
+<body>
+    <kostka1 class="leva_strana">
+        {% for i in pocet_kostek %}
+            <kostka2><img src="/static/obrázky/kostka_{{skore_hrac[i]}}.png" width="50px;"></kostka2>
+        {% endfor %}
+        <br>
+        <kostka2> hráč hodil: {{celkove_skore_hrac}}</kostka2>
+    </kostka1>
+    <kostka1 class="prava_strana">
+        {% for i in pocet_kostek %}
+            <kostka2><img src="/static/obrázky/kostka_{{skore_bot[i]}}.png" width="50px;"></kostka2>
+        {% endfor %}
+        <br>
+        <kostka2> počítač hodil: {{celkove_skore_bot}}</kostka2>
+    </kostka1>
+    <h1>Kostky</h1>
+    <br>
+    {% if vyhra != "remíza" %}
+        <h2 class="vyhra_text">vyhrál</h2>
+    {% endif %}
+    
+    <h3 class="vysledek_vyhry_text">{{vyhra}}</h3>
+    <br>
+    <a href="/" class="zpět">zpět</a>
+    
+     
+    
+     
+</body>
+</html>

@@ -1,0 +1,142 @@
+body{
+    background-color: black;
+    color:rgb(116, 116, 116);
+    text-align: center;
+    
+}
+h1{
+    text-decoration:underline;
+    font-size:60px;
+}
+kostka1{
+    position:fixed;
+    top:-100px;
+}
+kostka2{
+    position: relative;
+    animation: animace_kostky 2s forwards, animace_vysledek 2s forwards;
+    animation-timing-function: ease-in;
+    font-size:20px;
+}
+.leva_strana{
+    position: absolute;
+    width:calc(50vw - 120px);
+    left:20px;
+    
+}
+.prava_strana{
+    position: absolute;
+    width:calc(50vw - 120px);
+    left:calc(50vw + 100px);
+}
+@keyframes animace_kostky{
+    0% {top:-100px;left:0vw}
+    100% {top:calc(100vh - 80px);left:0vw}
+}
+@keyframes animace_vysledek{
+    0%{filter:blur(100px)}
+    100%{filter:blur(0px)}
+}
+.zpět{
+    position:fixed;
+    top:calc(100vh - 60px);
+    
+    left:calc(50vw - 1em);
+    font-size: 40px;
+}
+.nadpis{
+    width: 100%;
+    margin: 5% auto;
+    position:fixed;
+}
+.vyhra_text{
+    filter:opacity(0%);
+    animation: vyhra_text_animace 2s forwards;
+    animation-delay: 1.7s;
+}
+.vysledek_vyhry_text{
+    filter:opacity(0%);
+    animation: vyhra_text_animace 2s forwards, vysledek_vyhry_text_animace 1s infinite alternate-reverse;;
+    animation-delay: 1.7s;
+    font-size:40px;
+}
+@keyframes vyhra_text_animace{
+    0%{filter:opacity(0%)}
+    100%{filter:opacity(100%)}
+}
+@keyframes vysledek_vyhry_text_animace{
+    0%{color:red;}
+    25%{color:greenyellow}
+    50%{color:rgb(67, 18, 145)}
+    100%{color:purple;}
+}
+a{
+    font-size:50px;
+    text-decoration: none;
+    color:rgb(59, 137, 185);
+}
+a:hover{
+    color:rgb(13, 72, 109);
+    font-size:60px;
+    top:calc(100vh - 70px);
+}
+.statistika1{
+    right: calc(50vw + 10em);
+    animation: example 2s infinite;
+    animation-delay: 0s;
+}
+.statistika2{
+    right: calc(50vw + 2em);
+    animation: example 2s infinite;
+    animation-delay: 0.5s;
+}
+.statistika3{
+    left: calc(50vw + 1.8em);
+    animation: example 2s infinite;
+    animation-delay: 1s;
+}
+.statistika4{
+    left: calc(50vw + 8.5em);
+    animation: example 2s infinite;
+    animation-delay: 1.5s;
+}
+span{
+    color: red;
+    position: fixed;
+    bottom: 2vh;
+    font-size:3vw;
+    
+}
+@keyframes example {
+    0% {color: red;bottom: 2vh}
+    50% {color: green;bottom: 3vh}
+    100% {color: red;bottom: 2vh}
+}
+@keyframes animace_hrac {
+    0%{top:250px;}
+    100%{top:420px;}
+}
+@keyframes animace_bot {
+    0%{top:420px;}
+    100%{top:250px;}
+}
+@keyframes animace_hrac_remiza {
+    0%{top:250px;left:50%}
+    100%{top:335px;left:calc(50% + 100px)}
+}
+@keyframes animace_bot_remiza {
+    0%{top:420px;left:50%}
+    100%{top:335px;left:calc(50% - 100px)}
+}
+@keyframes animace_vyhra_prohra_dolu{
+    0%{opacity: 0%; }
+    100%{opacity: 100%;}
+}
+@keyframes animace_vyhra_prohra_blikani{
+    0%{color:orangered}
+    100%{color:red;}
+}
+@keyframes animace_hrat_znovu{
+    0%{ top:-100px;}
+    100%{top:0px;}
+}

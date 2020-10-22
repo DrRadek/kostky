@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/static/custom.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Kostky</title>
+</head>
+<body>
+    
+    <h1>Kostky</h1>
+    <h2>zvol počet kostek</h2>
+    <a href="/hod_kostky/1">1 </a>
+    <a href="/hod_kostky/2">2 </a>
+    <a href="/hod_kostky/3">3 </a>
+    <a href="/hod_kostky/4">4 </a>
+    <a href="/hod_kostky/5">5 </a>
+    <a href="/hod_kostky/6">6 </a>
+    <h2>nebo manuálně</h2>
+    <form method="POST" action="/">
+        {{form.csrf_token}}
+        {{form.pocet()}}
+        <input type="submit" value="Potvrdit">
+    </form>
+    <span class="statistika1">výhry hráče:{{vyhry[0]}}</span>
+    <span class="statistika2">výhry počítače:{{vyhry[1]}}</span>
+    <span class="statistika3">remízy:{{vyhry[2]}}</span>
+    <span class="statistika4">celkové hry:{{vyhry[3]}}</span>
+</body>
